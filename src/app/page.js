@@ -1,9 +1,10 @@
 import Image from "next/image";
+import MainPage from "./components/MainPage";
 
 export default function Home() {
   return (
    <div>
-    <h1>Welcome to Visionary Interiors</h1>
+    <MainPage />
    </div>
   );
 }
