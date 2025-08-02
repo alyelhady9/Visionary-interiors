@@ -1,5 +1,7 @@
 import { projects } from "../../data/projectsData";
+
 import ProjectClientPage from "../../components/ProjectClientPage";
+
 
 // This tells Next.js which project pages to build statically
 export async function generateStaticParams() {
@@ -7,6 +9,7 @@ export async function generateStaticParams() {
         id: project.id.toString(),
     }));
 }
+
 
 export default function Page({ params }) {
     const project = projects.find(p => p.id === parseInt(params.id));
