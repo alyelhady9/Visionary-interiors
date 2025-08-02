@@ -1,7 +1,5 @@
 import { projects } from "../../data/projectsData";
-
-import ProjectClientPage from "../../components/ProjectClientPage";
-
+import ProjectClientPage from "./ProjectClientPage";
 
 // This tells Next.js which project pages to build statically
 export async function generateStaticParams() {
@@ -9,7 +7,6 @@ export async function generateStaticParams() {
         id: project.id.toString(),
     }));
 }
-
 
 export default function Page({ params }) {
     const project = projects.find(p => p.id === parseInt(params.id));
@@ -21,6 +18,9 @@ export default function Page({ params }) {
             </div>
         );
     }
+    
+    // Convert the project object to a clean, serializable JSON object
+    const cleanedProject = JSON.parse(JSON.stringify(project));
 
-    return <ProjectClientPage project={project} />;
+    return <ProjectClientPage project={cleanedProject} />;
 }
