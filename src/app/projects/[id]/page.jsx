@@ -1,5 +1,5 @@
 import { projects } from "../../data/projectsData";
-import ProjectClientPage from "./ProjectClientPage";
+import ProjectClientPage from "../../components/ProjectClientPage";
 
 // This tells Next.js which project pages to build statically
 export async function generateStaticParams() {
